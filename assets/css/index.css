@@ -1,110 +1,244 @@
-* {
-    font-family: "Montserrat", sans-serif;
-    margin: 0px;
-    padding: 0px;
-}
-
-.container {
-    margin: auto;
-    width: 1440px;
-    height: 692px;
-    margin-top: 20px;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(238, 238, 238);
+  font-family: "Montserrat", sans-serif;
+  color: #212121;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: rgb(238, 238, 238);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .fabrx-dashboard {
-    background-color: white;
-    display: flex;
-    border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 80px 165px 80px 165px;
-    justify-content: space-between;
+  background-color: white;
+  display: flex;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 48px 60px;
+  justify-content: space-between;
+  gap: 40px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  max-height: 90vh;
+  overflow-y: auto;
+  align-items: center;
+}
+
+.fabrx-texts {
+  flex: 1 1 400px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .fabrx-texts h2 {
-    color: #212121;
-    width: 445px;
-    height: 140px;
-    font-weight: 700;
-    font-size: 60px;
-    line-height: 70px;
-    letter-spacing: -1px;
-    padding-top: 12px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.8px;
+  margin: 0 0 20px 0;
 }
 
 .fabrx-texts p {
-    color: #212121;
-    width: 445px;
-    height: 96px;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 32px;
-    padding-bottom: 24px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0 0 28px 0;
+  color: #212121cc;
 }
 
 .fabrx-texts h3 {
-    color: #212121;
-    width: 137px;
-    height: 48px;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 48px;
-    letter-spacing: -0.4px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.3px;
+  margin-bottom: 20px;
+  max-width: 140px;
 }
 
 .price {
-    display: flex;
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 28px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .discounted {
-    color: #212121;
-    width: 137px;
-    height: 48px;
-    margin-right: 16px; 
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 48px;
-    letter-spacing: -0.4px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.3px;
+  color: #212121;
 }
 
 .without-discount {
-    color: #C4C4C4;
-    float: left;
-    width: 78px;
-    height: 34px;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 34px;
-    padding-top: 8px;
-    text-decoration: line-through;
-}
-
-.price {
-    margin-bottom: 32px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  color: #c4c4c4;
+  text-decoration: line-through;
+  padding-top: 6px;
 }
 
 button {
-    background-color: #0D6EFD;
-    width: auto;
-    border: 2px solid transparent;
-    color: white;
-    padding: 16px 40px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 23px;
-    cursor: pointer; 
-    border-radius: 3px;
-    font-weight: 600;
-    line-height: 32px;
-    transition: 0.3s ease;
+  background-color: #0d6efd;
+  border: 2px solid transparent;
+  color: white;
+  padding: 14px 36px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: auto;
+  max-width: 100%;
+  align-self: flex-start;
 }
 
 button:hover {
-    color: #0D6EFD;
-    background-color: white;
-    border-color: #0D6EFD;
+  color: #0d6efd;
+  background-color: white;
+  border-color: #0d6efd;
+}
+
+.fabrx-dashboard img {
+  flex-shrink: 0;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+  max-height: 450px;
+  width: auto;
+  align-self: center;
+}
+
+@media (max-width: 992px) {
+  .fabrx-dashboard {
+    padding: 40px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: visible;
+  }
+
+  .fabrx-texts {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fabrx-texts h2 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .fabrx-texts p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .fabrx-texts h3 {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .price {
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .discounted {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .without-discount {
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 4px;
+  }
+
+  button {
+    padding: 12px 28px;
+    font-size: 18px;
+    width: auto;
+  }
+
+  .fabrx-dashboard img {
+    width: 100%;
+    max-height: none;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .fabrx-dashboard {
+    padding: 30px 20px;
+  }
+
+  .fabrx-texts h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .fabrx-texts p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .fabrx-texts h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .price {
+    gap: 8px;
+  }
+
+  .discounted {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .without-discount {
+    font-size: 14px;
+    line-height: 20px;
+    padding-top: 4px;
+  }
+
+  button {
+    padding: 12px 20px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 320px;
+  }
 }
